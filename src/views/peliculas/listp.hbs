@@ -1,35 +1,39 @@
 <div class="container" style="margin-top:70px;">
-    <div class="row mt-5">
-        <h3 class="text-center text-uppercase p-2">LISTA DE CLIENTES CON PRESTAMO </h3>
+    <div class="row mt-6">
+        <h3 class="text-center text-uppercase p-2">LISTA DE PELCULAS PRESTADAS </h3>
 
-        {{#if clientes}}
+        {{#if peliculas}}
         <div class="table-responsive">
             <table class="table table-bordered table-hover text-center">
                 
                 <thead>
                     <tr class="table-dark">
-                        <th scope="col" class="col-4">NOMBRES</th>
-                        <th scope="col">APELLIDOS</th>
-                        <th scope="col">FECHA DE NACIMIENTO</th>
-                        <th scope="col">DIRECCION</th>
+                        <th scope="col" class="col-4">PELICULA / SERIE</th>
+                        <th scope="col">DURACION</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">AÑO</th>
+                        <th scope="col">CATEGORIA</th>
                         <th scope="col">ACTIONS</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    {{#each clientes}}
+                    {{#each peliculas}}
                     <tr>
-                        <td>{{nomcli}}</td>
-                        <td>{{apecli}}</td>
-                        <td>{{fechancli}}</td>
-                        <td>{{dircli}}</td>
+                        <td>{{nom_pel}}</td>
+                        <td>{{dur_pel}}</td>
+                        <td>{{des_pel}}</td>
+                        <td>{{anio_pel}}</td>
+                        <td>{{cat_pel}}</td>
+
 
                         <td>
                             <div class="d-flex justify-content-center">
-                               <a href="/edit/{{idcli}}" class="btn btn-success me-2 p-2">
+                               <a href="/editp/{{id_pel}}" class="btn btn-success me-2 p-2">
                                     <i class="fa-solid fa-pencil"></i> EDIT
                                </a>
 
-                                <a href="/delete/{{idcli}}" class="btn btn-danger p-2">
+                                <a href="/deletep/{{id_pel}}" class="btn btn-danger p-2">
                                     <i class="fa-solid fa-trash"></i> DELETE
                                 </a>
                             </div>
@@ -43,17 +47,17 @@
 
         <!-- Botón para registrar a un nuevo cliente  -->
         <div class="text-center mb-3">
-            <a href="/add" class="btn text-dark" style="background-color:gold;" aria-current="page"> REGISTRAR UN NUEVO CLIENTE </a>
+            <a href="/addp" class="btn text-dark" style="background-color:gold;" aria-current="page"> REGISTRAR UNA NUEVA PELICULA / SERIE </a>
         </div>
 
         {{else}}
         <div class="card text-center mx-auto" style="width: 350px;">
             <div class="card-header">
-                <h4>INSERTE LOS DATOS DEL NUEVO CLIENTE</h4>
+                <h4>REGISTRE EL PRESTAMO DE UNA PELICULA / SERIE</h4>
             </div>
             <div class="card-body">
-                <p>Dale clic al botón para que puedas registrar a un nuevo cliente en la plataforma</p>
-                <a href="/add" class="btn btn-primary">IR A CREAR</a>
+                <p>Dale clic al botón para realizar un prestamo</p>
+                <a href="/addp" class="btn btn-primary">REGISTRAR</a>
             </div>
         </div>
         {{/if}}

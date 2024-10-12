@@ -1,6 +1,6 @@
 import {createPool} from 'mysql2/promise';
 
-const pool = createPool({
+const sequelize = createPool({
     host: 'localhost',
     port: '3306',
     user: 'root',
@@ -8,4 +8,4 @@ const pool = createPool({
     database: 'data'
 });
 
-export default pool;
+export default sequelize;

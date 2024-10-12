@@ -9,9 +9,9 @@ router.get('/add', (req,res)=>{
 
 router.post('/add', async(req, res)=>{
     try{
-        const {nomcli, apecli, nrodnicli,telcli} = req.body;
+        const {nomcli, apecli, fechancli,dircli} = req.body;
         const newCliente = {
-            nomcli, apecli, nrodnicli,telcli
+            nomcli, apecli, fechancli,dircli
         }
         await pool.query('INSERT INTO clientes SET ?', [newCliente]);
         res.redirect('/list');
@@ -38,16 +38,18 @@ router.get('/edit/:id', async(req, res)=>{
         const clienteEdit = cliente[0];
         res.render('clientes/edit', {cliente: clienteEdit});
     }
+    
     catch(err){
         res.status(500).json({message:err.message});
     }
+    
 })
 
 router.post('/edit/:id', async(req, res)=>{
     try{
-        const {nomcli, apecli, nrodnicli,telcli} = req.body;
+        const {nomcli, apecli, fechancli, dircli} = req.body;
         const {id} = req.params;
-        const editCliente = {nomcli, apecli, nrodnicli,telcli};
+        const editCliente = {nomcli, apecli, fechancli, dircli};
         await pool.query('UPDATE clientes SET ? WHERE idcli = ?', [editCliente, id]);
         res.redirect('/list');
     }

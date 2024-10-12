@@ -5,6 +5,8 @@ import {join, dirname} from 'path'
 import { fileURLToPath } from "url"
 
 import clientesRoutes from './routes/clientesroutes.js'
+import peliculasRoutes from './routes/pelculasroutes.js'
+
 
 //Initializacion
 const app=express();
@@ -37,6 +39,8 @@ app.get('/', (req, res)=>{
 })
 
 app.use(clientesRoutes)
+app.use(peliculasRoutes)
+
 
 //Publics Files
                     //funcion Join, public los usuarios pueden utilizar lo q hay en la carpeta public

@@ -1,44 +1,37 @@
-<div class="container p-4" style="margin-top:70px ;">
+<div class="container p-4" style="margin-top:70px;">
     <div class="row">
-        <div class="col-md-4 mx-auto">
+        <div class="col-md-6 mx-auto"> 
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase">CREAR UN NUEVO CLIENTE</h3>
+                    <h3 class="text-uppercase">REGISTRAR NUEVO CLIENTE</h3>
                 </div>
                 <div class="card-body">
                     <form action="/add" method="post">
                         <div class="input-group mt-2">
-                            <label for="name" class="input-group-text">Nombre</label>
-                            <input class="form-control" type="text" name="nomcli" id="nomcli" placeholder="Nombres"
-                                autofocus required>
+                            <label for="name" class="input-group-text">NOMBRES</label>
+                            <input class="form-control" type="text" name="nomcli" id="nomcli" placeholder="Name" autofocus required>
                         </div>
                         <div class="input-group mt-2">
-                            <label for="lastname" class="input-group-text">Apellidos</label>
-                            <input class="form-control" type="text" name="apecli" id="apecli" placeholder="Apellidos"
-                                required>
+                            <label for="lastname" class="input-group-text">APELLIDOS</label>
+                            <input class="form-control" type="text" name="apecli" id="apecli" placeholder="Lastname" required>
                         </div>
                         <div class="input-group mt-2">
-                            <label for="age" class="input-group-text">Nro. DNI</label>
-                            <input class="form-control" type="text" name="nrodnicli" id="nrodnicli"
-                                placeholder="Nro. DNI" required>
+                            <label for="birthdate" class="input-group-text">FECHA DE NAC.<label>
+                            <input class="form-control" type="date" name="fechancli" id="fechancli" placeholder="Birthdate" required>
                         </div>
-
                         <div class="input-group mt-2">
-                            <label for="age" class="input-group-text">Nro. Teléfono</label>
-                            <input class="form-control" type="text" name="telcli" id="telcli" placeholder="Nro. Célular"
-                                required>
+                            <label for="direction" class="input-group-text">DIRECCION</label>
+                            <input class="form-control" type="text" name="dircli" id="dircli" placeholder="Direction" required>
                         </div>
-
-                        <div class="form-group mt-4 d-grid gap-2">
-                            <button class="btn btn-success"> Guardar</button>
-                            <button class="btn btn-danger"><a class="nav-link  link-light" aria-current="page"
-                                    href="/list"> Cancelar</a></button>
-                        </div>
+                        <div class="form-group mt-4 d-flex gap-2">
+                            <button class="btn btn-success flex-fill">SAVE</button>
+                            <button class="btn btn-danger flex-fill">
+                                <a class="nav-link link-light" aria-current="page" href="/list">CANCEL</a>
+                            </button>
+                        </div> 
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
